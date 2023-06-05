@@ -1,4 +1,7 @@
 import './globals.css'
+import Navbar from "@/companents/navbar/Navbar";
+import Footer from "@/companents/footer/Footer";
+import {ThemeProvider} from "@/context/ThemeContext";
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,7 +11,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="container">
+      <ThemeProvider >
+          <div>
+              <Navbar />
+              {children}
+              <Footer />
+          </div>
+
+      </ThemeProvider>
+
+      </body>
     </html>
   )
 }
